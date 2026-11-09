@@ -1,0 +1,253 @@
+
+/* =========================================
+   1. GLOBAL RESET
+   Removes default browser spacing and
+   makes element sizing predictable.
+========================================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================================
+   2. BODY
+   Sets the overall background, font,
+   text color and page spacing.
+========================================= */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #101010;
+    color: #f5f5f5;
+    line-height: 1.7;
+    padding: 30px 8%;
+}
+
+
+/* =========================================
+   3. HEADER
+   Styles the main heading and introduction.
+========================================= */
+
+header {
+    text-align: center;
+    padding: 50px 20px;
+    margin-bottom: 35px;
+    background: linear-gradient(135deg, #1a1a1a, #300000);
+    border-bottom: 4px solid #ed1d24;
+    border-radius: 12px;
+}
+
+header h1 {
+    font-size: 2.8rem;
+    color: #ed1d24;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-bottom: 15px;
+}
+
+header p {
+    max-width: 750px;
+    margin: 0 auto;
+    color: #cccccc;
+    font-size: 1.05rem;
+}
+
+
+/* =========================================
+   4. MAIN CONTENT
+   Controls the width of the main content.
+========================================= */
+
+main {
+    max-width: 1100px;
+    margin: 0 auto;
+}
+
+
+/* =========================================
+   5. PHASE SECTIONS
+   Each phase appears inside an individual
+   card with a dark background and border.
+========================================= */
+
+section {
+    background-color: #1c1c1c;
+    margin-bottom: 30px;
+    padding: 25px 35px;
+    border-radius: 10px;
+    border-left: 5px solid #ed1d24;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+
+    transition: transform 0.3s ease,
+                box-shadow 0.3s ease;
+}
+
+/* Adds a subtle animation when hovering over a phase. */
+
+section:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 20px rgba(237, 29, 36, 0.15);
+}
+
+
+/* =========================================
+   6. PHASE HEADINGS
+   Makes each phase heading stand out.
+========================================= */
+
+section h2 {
+    color: #ed1d24;
+    font-size: 1.6rem;
+    margin-bottom: 18px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #444;
+}
+
+
+/* =========================================
+   7. MOVIE AND TV SHOW LISTS
+   Removes default list markers and
+   creates consistent spacing.
+========================================= */
+
+section ul {
+    list-style: none;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+
+/* =========================================
+   8. LIST ITEMS
+   Styles individual movie and TV show names.
+========================================= */
+
+section li {
+    background-color: #292929;
+    padding: 12px 16px;
+    border-radius: 6px;
+    border-left: 3px solid #ed1d24;
+    color: #e5e5e5;
+    font-size: 0.95rem;
+
+    transition: background-color 0.25s ease,
+                transform 0.25s ease;
+}
+
+/* Hover effect for individual titles. */
+
+section li:hover {
+    background-color: #3a2020;
+    transform: translateX(5px);
+    color: #ffffff;
+}
+
+
+/* =========================================
+   9. FOOTER
+   Styles the bottom information area.
+========================================= */
+
+footer {
+    text-align: center;
+    margin-top: 50px;
+    padding: 20px;
+    color: #888888;
+    border-top: 1px solid #333333;
+    font-size: 0.9rem;
+}
+
+
+/* =========================================
+   10. RESPONSIVE DESIGN
+   Adjusts the layout for tablets and
+   smaller screens.
+========================================= */
+
+@media (max-width: 768px) {
+
+    body {
+        padding: 20px 5%;
+    }
+
+    header h1 {
+        font-size: 2rem;
+    }
+
+    section {
+        padding: 20px;
+    }
+
+    section ul {
+        grid-template-columns: 1fr;
+    }
+
+}
+
+
+/* =========================================
+   11. MOBILE DESIGN
+   Further adjusts spacing and typography
+   for small mobile screens.
+========================================= */
+
+@media (max-width: 480px) {
+
+    body {
+        padding: 12px;
+    }
+
+    header {
+        padding: 35px 15px;
+    }
+
+    header h1 {
+        font-size: 1.7rem;
+    }
+
+    header p {
+        font-size: 0.9rem;
+    }
+
+    section h2 {
+        font-size: 1.3rem;
+    }
+
+    section li {
+        font-size: 0.9rem;
+        padding: 10px 12px;
+    }
+
+}
+
+/* Clickable movie and TV show links */
+
+section li a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    color: inherit;
+    text-decoration: none;
+}
+
+/* Hover effect */
+
+section li:has(a):hover {
+    cursor: pointer;
+    background-color: #571b1b;
+    border-left-color: #ff3333;
+}
+
+/* Keyboard accessibility */
+
+section li a:focus-visible {
+    outline: 2px solid #ed1d24;
+    outline-offset: 4px;
+    border-radius: 4px;
+}
+
